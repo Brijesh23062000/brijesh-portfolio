@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><B>rijesh -Developer Portfolio</B></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 75px;
+            background-color: rgb(18, 18, 62);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: rgb(170, 107, 228);
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        .line {
+            border: 0;
+            background-color: #5e57ea;
+            height: 1px;
+            margin: 60px 84px;
+        }
+
+        /* SECTION HEADING */
+
+        .section-heading {
+            text-align: center;
+            color: rgb(170, 107, 228);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        /* HERO SECTION */
+
+        .hero-section {
+            max-width: 85vw;
+            margin: auto;
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-left h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-left h2 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .hero-left p {
+            line-height: 1.9;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .hero-right {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-right img {
+            width: 340px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid rgb(170, 107, 228);
+            box-shadow: 0px 0px 30px rgba(170, 107, 228, 0.6);
+            transition: 0.4s ease;
+            background-color: rgb(18, 18, 62);
+            padding: 8px;
+        }
+
+        .hero-right img:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0px 0px 40px rgba(170, 107, 228, 0.9);
+        }
+
+        .hero-right img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn,
+        .btn-outline {
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .btn {
+            background-color: rgb(170, 107, 228);
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: rgb(140, 80, 210);
+        }
+
+        .btn-outline {
+            border: 2px solid rgb(170, 107, 228);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgb(170, 107, 228);
+        }
+
+        /* EXPERIENCE */
+
+        .experience-section {
+            max-width: 85vw;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background-color: rgb(18, 18, 62);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(170, 107, 228, 0.4);
+            transition: 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 25px rgba(170, 107, 228, 0.8);
+        }
+
+        .experience-card h3 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 15px;
+        }
+
+        .experience-card p {
+            line-height: 1.8;
+        }
+
+        /* COMMON SECTION */
+
+        .about-me,
+        .projects-section {
+            max-width: 80vw;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .about-card,
+        .course-card,
+        .achievement-card,
+        .project-card,
+        .internship-card {
+            background-color: rgb(18, 18, 62);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(170, 107, 228, 0.4);
+            transition: 0.3s ease;
+        }
+
+        .about-card:hover,
+        .course-card:hover,
+        .achievement-card:hover,
+        .project-card:hover,
+        .internship-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 0px 25px rgba(170, 107, 228, 0.8);
+        }
+
+        .about-card p,
+        .course-card p,
+        .project-card p,
+        .internship-card p {
+            line-height: 1.8;
+        }
+
+        /* COURSES */
+
+        .course-heading {
+            color: rgb(170, 107, 228);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .course-card h3 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* ACHIEVEMENTS */
+
+        .photos {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+        }
+
+        .photos:hover {
+            transform: scale(1.02);
+        }
+
+        .achievement-card h2 {
+            text-align: center;
+            color: rgb(170, 107, 228);
+            margin-bottom: 30px;
+        }
+
+        .spoken,
+        .infosys {
+            text-align: center;
+        }
+
+        /* PROJECTS */
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .project-card h3 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .project-card p {
+            color: white;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* INTERNSHIPS */
+
+        .internship-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .internship-card {
+            text-align: center;
+        }
+
+        .internship-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: 0.3s ease;
+        }
+
+        .internship-img:hover {
+            transform: scale(1.02);
+        }
+
+        .internship-card h3 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 15px;
+        }
+
+        .internship-card p {
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        /* FOOTER */
+
+        footer {
+            background-color: #0e0e1a;
+            margin-top: 80px;
+            padding-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 85vw;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-box h3 {
+            color: rgb(170, 107, 228);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-logo {
+            color: rgb(170, 107, 228);
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            line-height: 1.8;
+            color: #d1d1d1;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: rgb(170, 107, 228);
+            padding-left: 5px;
+        }
+
+        .footer-box p {
+            margin-bottom: 12px;
+            color: #d1d1d1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .social-img {
+            width: 60px;
+            transition: 0.3s ease;
+        }
+
+        .social-img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-line {
+            border: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 1px;
+            width: 85%;
+            margin: auto;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            color: #bdbdbd;
+            font-size: 0.95rem;
+        }
+
+        /* TYPING EFFECT */
+
+        #element {
+            color: rgb(170, 107, 228);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Brijesh's Portfolio</div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#internships">Internships</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME SECTION -->
+
+        <section id="home" class="hero-section">
+
+            <div class="hero-left">
+
+                <h1>
+                    Hi, I'm <span class="purple">Brijesh</span> 👋
+                </h1>
+
+                <h2>
+                    <span id="element"></span>
+                </h2>
+
+                <p>
+                    Passionate Engineering Student focused on Web Development,
+                    Artificial Intelligence, Software Development,
+                    and Modern Technologies.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">🚀 View Projects</a>
+                    <a href="#contact" class="btn-outline">📩 Contact Me</a>
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+                <img src="brijesh.photo.jpeg" alt="Brijesh">
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- EXPERIENCE -->
+
+        <section class="experience-section">
+
+            <h1 class="section-heading">💼 Experience & Skills</h1>
+
+            <div class="experience-container">
+
+                <div class="experience-card">
+                    <h3>🌐 Frontend Development</h3>
+
+                    <p>
+                        Building responsive and interactive websites
+                        using HTML, CSS, JavaScript, Flexbox, and Grid.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>☕ Java Programming</h3>
+
+                    <p>
+                        Strong understanding of Java programming,
+                        object-oriented concepts, and logical problem solving.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>🤖 Artificial Intelligence</h3>
+
+                    <p>
+                        Learned AI concepts and explored beginner-level
+                        machine learning and generative AI technologies.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>💻 Software Development</h3>
+
+                    <p>
+                        Passionate about software engineering,
+                        debugging, and building modern technical projects.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>🤝 Team Collaboration</h3>
+
+                    <p>
+                        Worked effectively in academic teams,
+                        presentations, and collaborative technical projects.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>🚀 Continuous Learning</h3>
+
+                    <p>
+                        Always exploring new technologies,
+                        frameworks, and industry trends to improve skills.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- ABOUT -->
+
+        <section id="about" class="about-me">
+
+            <h1 class="section-heading">👨‍💻 About Me</h1>
+
+            <div class="about-card">
+
+                <p>
+                    🚀 Hello! I’m <span class="purple">Brijesh</span>, a passionate
+                    and hardworking engineering student with a deep interest in
+                    technology, software development, and innovation.
+                </p>
+
+                <br>
+
+                <p>
+                    💡 I enjoy building modern web applications,
+                    learning new technologies, and improving my problem-solving
+                    abilities through practical projects.
+                </p>
+
+                <br>
+
+                <p>
+                    🌐 My main interests include Frontend Development,
+                    Java Programming, Artificial Intelligence,
+                    and Machine Learning concepts.
+                </p>
+
+                <br>
+
+                <p>
+                    🎯 My goal is to become a skilled Software Developer
+                    and contribute to impactful technologies in the tech industry.
+                </p>
+
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- ACHIEVEMENTS -->
+
+        <section id="achievements" class="about-me">
+
+            <h1 class="section-heading">🏆 Achievements & Certifications</h1>
+
+            <div class="achievement-card">
+
+                <h2>🎓 Spoken Tutorial Certifications</h2>
+
+                <div class="spoken">
+
+                    <img class="photos" src="c training spoken.jpeg" alt="">
+                    <h4>💻 Spoken C Training Certificate</h4>
+
+                    <br><br>
+
+                    <img class="photos" src="PYTHON SPOKEN.jpeg" alt="">
+                    <h4>🐍 Spoken Python Certificate</h4>
+
+                    <br><br>
+
+                    <img class="photos" src="ARDUINO SPOKEN.jpeg" alt="">
+                    <h4>🔌 Spoken Arduino Training Certificate</h4>
+
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <div class="achievement-card">
+
+                <h2>🌟 Infosys Springboard Certifications</h2>
+
+                <div class="infosys">
+
+                    <img class="photos" src="java springboard.jpeg" alt="">
+                    <h4>☕ Java Programming Certificate</h4>
+
+                    <br><br>
+
+                    <img class="photos" src="BDA INFOSYS.jpeg" alt="">
+                    <h4>📊 Big Data Analytics Certificate</h4>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- COURSES -->
+
+        <section id="courses" class="about-me">
+
+            <h1 class="course-heading">📚 Courses</h1>
+
+            <div class="course-card">
+                <h3>🌐 Web Development</h3>
+
+                <p>
+                    Learned HTML, CSS, JavaScript, responsive design,
+                    Flexbox, Grid, and frontend web development concepts.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="course-card">
+                <h3>☕ Java Programming</h3>
+
+                <p>
+                    Studied object-oriented programming,
+                    exception handling, arrays, loops,
+                    and Java application development.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="course-card">
+                <h3>🧠 Data Structures & Algorithms</h3>
+
+                <p>
+                    Practicing problem-solving, recursion,
+                    sorting, searching, stacks, and linked lists.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="course-card">
+                <h3>🤖 Machine Learning Basics</h3>
+
+                <p>
+                    Exploring supervised learning,
+                    datasets, preprocessing,
+                    and beginner ML projects.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="course-card">
+                <h3>🗄️ Database Management System</h3>
+
+                <p>
+                    Learning SQL queries, normalization,
+                    relational databases, and database design.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="course-card">
+                <h3>💻 Full Stack Development</h3>
+
+                <p>
+                    Understanding frontend and backend integration,
+                    APIs, and modern web application development.
+                </p>
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- PROJECTS -->
+
+        <section id="projects" class="projects-section">
+
+            <h1 class="section-heading">🚀 Projects</h1>
+
+            <div class="project-container">
+
+                <div class="project-card">
+                    <h3>🎫 Online Event Registration System</h3>
+
+                    <p>
+                        Developed a responsive Online Event Registration website
+                        using HTML, CSS, and JavaScript.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>💻 Personal Portfolio Website</h3>
+
+                    <p>
+                        Designed and developed a modern portfolio website
+                        showcasing skills and achievements.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>🤖 Beginner Machine Learning Projects</h3>
+
+                    <p>
+                        Explored beginner machine learning concepts
+                        and practiced data preprocessing techniques.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌐 Frontend Web Design Projects</h3>
+
+                    <p>
+                        Created responsive webpage layouts using
+                        Flexbox, Grid, and modern CSS styling.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <hr class="line">
+
+        <!-- INTERNSHIPS -->
+
+        <section id="internships" class="projects-section">
+
+            <h1 class="section-heading">💼 Internships & Training</h1>
+
+            <div class="internship-container">
+
+                <div class="internship-card">
+
+                    <img class="internship-img" src="PLACEMANTRA CERTIFICATE.jpeg" alt="">
+
+                    <h3>🤖 Artificial Intelligence Internship</h3>
+
+                    <p>
+                        Successfully completed an Artificial Intelligence Internship
+                        with Placemantra from January 2025 to March 2025.
+                    </p>
+
+                </div>
+
+                <div class="internship-card">
+
+                    <img class="internship-img" src="VIRTUAL INTERNSHIP.jpeg" alt="">
+
+                    <h3>🌟 Generative AI Virtual Internship</h3>
+
+                    <p>
+                        Completed a Virtual Internship in Generative AI
+                        from July 2025 to September 2025.
+                        Certification provided by Google Cloud.
+                    </p>
+
+                </div>
+
+                <div class="internship-card">
+
+                    <img class="internship-img" src="link" alt="">
+
+                    <h3>🏭 Intel Unnati Industrial Training</h3>
+
+                    <p>
+                        Successfully completed project work under
+                        Intel Unnati Industrial Training Program
+                        and received Certificate of Completion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer id="contact">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h2 class="footer-logo">
+                    Brijesh's Portfolio 🚀
+                </h2>
+
+                <p class="footer-text">
+                    Passionate Engineering Student focused on
+                    Web Development, Artificial Intelligence,
+                    and Software Development.
+                </p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>📌 Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="#home">🏠 Home</a></li>
+                    <li><a href="#about">👨‍💻 About</a></li>
+                    <li><a href="#projects">🚀 Projects</a></li>
+                    <li><a href="#internships">💼 Internships</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>📞 Contact Info</h3>
+
+                <p>📧 brijesh.bharakhada24@sakec.ac.in</p>
+                <p>📱 +91 9326663465</p>
+                <p>📍 Mumbai, Maharashtra, India</p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>🌐 Connect With Me</h3>
+
+                <div class="social-icons">
+
+                    <a href="https://www.linkedin.com/">
+                        <img class="social-img" src="link.png.png" alt="">
+                    </a>
+
+                    <a href="https://github.com/">
+                        <img class="social-img" src="git.png" alt="">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+            © 2026 Brijesh | All Rights Reserved
+        </div>
+
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: [
+                'Web Developer',
+                'Engineering Student',
+                'Creative Coder',
+                'AI Enthusiast',
+                'Future Software Engineer'
+            ],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
